@@ -1,6 +1,18 @@
 server:
-  port: 8088
+  port: 80
 
 logging:
   file:
     name: ../logs/
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    # 开发时关闭缓存
+    cache: false
+    suffix: .html
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+    mode: HTML5
