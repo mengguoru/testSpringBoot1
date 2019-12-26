@@ -80,4 +80,21 @@ public class MybatisTest {
     public void testDelete(){
         userDao.delete(25);
     }
+
+    @Test
+    public void testFindById(){
+        System.out.println(userDao.findById(20));
+    }
+
+    @Test
+    public void testFindByName(){
+        List<User> list = userDao.findByName("%小%");
+        for(User user:list)
+            System.out.println(user);
+    }
+
+    @Test
+    public void testTotal(){
+        System.out.println(userDao.total());
+    }
 }
