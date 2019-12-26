@@ -5,5 +5,9 @@
 <mapper namespace="com.meng.dao.IUserDao">
     <select id="findAll" resultType="com.meng.entity.User">
         select * from user
-  </select>
+    </select>
+
+    <insert id="save" parameterType="com.meng.entity.User">
+        insert into user(username,birthday,sex,address)values(#{username},#{birthday},#{sex},#{address})
+    </insert>
 </mapper>
