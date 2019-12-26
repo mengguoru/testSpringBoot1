@@ -10,4 +10,12 @@
     <insert id="save" parameterType="com.meng.entity.User">
         insert into user(username,birthday,sex,address)values(#{username},#{birthday},#{sex},#{address})
     </insert>
+
+    <update id="update" parameterType="com.meng.entity.User">
+        update user set username=#{username},birthday=#{birthday},sex=#{sex},address=#{address} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        delete from user where id=#{id}
+    </delete>
 </mapper>

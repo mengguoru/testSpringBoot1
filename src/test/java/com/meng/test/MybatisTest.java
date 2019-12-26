@@ -63,4 +63,21 @@ public class MybatisTest {
 
         userDao.save(user);
     }
+
+    @Test
+    public void testUpdate(){
+        User user = new User();
+        user.setId(24);
+        user.setUsername("小王");
+        user.setBirthday(new Date());
+        user.setSex("男");
+        user.setAddress("广州");
+
+        userDao.update(user);
+    }
+
+    @Test
+    public void testDelete(){
+        userDao.delete(25);
+    }
 }
