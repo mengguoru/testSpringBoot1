@@ -8,7 +8,7 @@ public class Role implements Serializable {
     private String name;
     private String description;
 
-    private List<User3> user3List;
+    private List<User3> users;
 
     public int getId() {
         return id;
@@ -43,11 +43,11 @@ public class Role implements Serializable {
                 '}';
     }
 
-    public List<User3> getUser3List() {
-        return user3List;
+    public List<User3> getUsers() {
+        return users;
     }
 
-    public void setUser3List(List<User3> user3List) {
-        this.user3List = user3List;
+    public void setUsers(List<User3> users) {
+        this.users = users;
     }
 }

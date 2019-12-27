@@ -19,6 +19,7 @@
         <mapper resource="com/meng/dao/User2Mapper.xml"/>
         <mapper resource="com/meng/dao/Account2Mapper.xml"/>
         <mapper resource="com/meng/dao/User3Mapper.xml"/>
+        <mapper resource="com/meng/dao/RoleMapper.xml"/>
 <!--        <package name="com.meng.dao"/>-->
     </mappers>
 </configuration>
