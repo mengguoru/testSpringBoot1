@@ -16,5 +16,7 @@
     </environments>
     <mappers>
         <mapper resource="com/meng/dao/UserMapper.xml"/>
+        <mapper resource="com/meng/dao/User2Mapper.xml"/>
+<!--        <package name="com.meng.dao"/>-->
     </mappers>
 </configuration>
