@@ -15,6 +15,13 @@ public interface IUserDao {
     User findById(Integer id);
 
     /**
+     * 根据传入id数组查找
+     * @param ids
+     * @return
+     */
+    List<User> findByIds(List<Integer> ids);
+
+    /**
      * 根据用户名模糊查找
      * @param uname
      * @return

@@ -6,6 +6,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.assertj.core.util.Lists;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -84,6 +86,14 @@ public class MybatisTest {
     @Test
     public void testFindById(){
         System.out.println(userDao.findById(20));
+    }
+
+    @Test
+    public void testFindByIds(){
+        List<Integer> list = Lists.newArrayList(21,22);
+        List<User> users = userDao.findByIds(list);
+        for(User user:users)
+            System.out.println(user);
     }
 
     @Test
