@@ -1,5 +1,6 @@
 package com.meng.test;
 
+import com.meng.dao.IAccount2Dao;
 import com.meng.dao.IUser2Dao;
 import com.meng.dao.IUserDao;
 import com.meng.entity.Account2;
@@ -31,6 +32,7 @@ public class One2MultiTest {
     InputStream in;
     SqlSession session;
     IUser2Dao userDao;
+    IAccount2Dao accountDao;
 
     @Before
     public void init() throws  Exception{
@@ -40,6 +42,7 @@ public class One2MultiTest {
         session = factory.openSession();
 
         userDao = session.getMapper(IUser2Dao.class);
+        accountDao = session.getMapper(IAccount2Dao.class);
     }
 
     @After
@@ -61,8 +64,16 @@ public class One2MultiTest {
                 for(Account2 a:accounts)
                     System.out.println(a);
             }
-
         }
+    }
 
+    @Test
+    public void testFindAllAccount(){
+        List<Account2> accounts = accountDao.findAll();
+        for(Account2 a:accounts){
+            System.out.println("---分割线---");
+            System.out.println(a);
+            System.out.println(a.getUser());
+        }
     }
 }
