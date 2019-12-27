@@ -94,6 +94,22 @@ public class MybatisTest {
     }
 
     @Test
+    public void testFindByCondition(){
+        User user = new User();
+        user.setId(21);
+        List<User> list = userDao.findByCondition(user);
+        for(User u:list)
+            System.out.println(u);
+        System.out.println("---分割线---");
+        user = new User();
+        user.setUsername("小红");
+        user.setSex("女");
+        list = userDao.findByCondition(user);
+        for(User u:list)
+            System.out.println(u);
+    }
+
+    @Test
     public void testTotal(){
         System.out.println(userDao.total());
     }

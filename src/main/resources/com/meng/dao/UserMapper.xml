@@ -24,6 +24,21 @@
         select * from user where username like #{username}
     </select>
 
+    <select id="findByCondition" parameterType="com.meng.entity.User" resultMap="usermap">
+        select * from user
+        <where>
+            <if test="null != username">
+                and username=#{username}
+            </if>
+            <if test="null != id">
+                and id=#{id}
+            </if>
+            <if test="null != sex">
+                and sex=#{sex}
+            </if>
+        </where>
+    </select>
+
     <select id="total" resultType="int">
         select count(id) from user
     </select>

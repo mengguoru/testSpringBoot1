@@ -21,6 +21,13 @@ public interface IUserDao {
      */
     List<User> findByName(String uname);
 
+    /**
+     * 条件查找
+     * @param user
+     * @return
+     */
+    List<User> findByCondition(User user);
+
     int total();
 
     void save(User user);
