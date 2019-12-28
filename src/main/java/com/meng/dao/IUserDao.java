@@ -1,6 +1,8 @@
 package com.meng.dao;
 
 import com.meng.entity.User;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
