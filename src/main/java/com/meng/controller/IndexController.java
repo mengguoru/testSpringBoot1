@@ -1,11 +1,13 @@
 package com.meng.controller;
 
+import com.meng.entity.User;
 import com.meng.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -27,5 +29,16 @@ public class IndexController {
             for(var i:users)
                 System.out.println(i);
         }
+    }
+
+    @RequestMapping("/test2")
+    public List<User> test2() throws IOException {
+        userService = new UserService();
+        var users = userService.findAll();
+//        if(users.size() > 0){
+//            for(var i:users)
+//                System.out.println(i);
+//        }
+        return users;
     }
 }
